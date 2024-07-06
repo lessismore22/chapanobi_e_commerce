@@ -11,6 +11,7 @@ product_model = product_ns.model(
     {
         "id": fields.Integer(),
         "title": fields.String(),
+        "price": fields.Float(),
         "description": fields.String()
     }
 )
@@ -33,6 +34,7 @@ class ProductsResource(Resource):
         data = request.get_json()
         new_product = Product(
             title=data.get('title'),
+            price=data.get('price'),
             description=data.get('description')
         )
         save(new_product)
@@ -58,7 +60,7 @@ class ProductResource(Resource):
         product_to_update = Product.query.get_or_404(id)
         data = request.get_json()
         
-        product_to_update.update(data['title'], data['description'])
+        product_to_update.update(data['title'], data['price'], data['description'])
         return product_to_update
         
     @product_ns.marshal_with(product_model)

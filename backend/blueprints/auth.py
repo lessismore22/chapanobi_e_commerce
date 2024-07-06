@@ -23,7 +23,11 @@ signup_model = user_ns.model(
     },
 )
 login_model = user_ns.model(
-    "Login", {"username": fields.String(), "password": fields.String()}
+    "Login",
+    {
+        "username": fields.String(),
+        "password": fields.String()
+    }
 )
 
 
@@ -63,7 +67,7 @@ class SignUp(Resource):
         return jsonify({"message": "User created successfully"})
 
 
-@user_ns.route("/user/login")
+@user_ns.route("/users/login")
 class LoginResource(Resource):
     @user_ns.expect(login_model)
     @user_ns.doc("login_user")
