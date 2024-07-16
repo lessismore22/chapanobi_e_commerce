@@ -4,10 +4,10 @@ from models import db, Product
 product_bp = Blueprint('products', __name__)
 
 @product_bp.route('/', methods=['POST'])
-def create_product():
 # @login_required
+def create_product():
     data = request.get_json()
-    new_product = Product(name=data['name'], description=data['description'], price=data['price'], category_id=data['category_id'])
+    new_product = Product(name=data['name'], description=data['description'], price=data['price'], category_id=data['category_id'], image_url=data['image_url'])
     db.session.add(new_product)
     db.session.commit()
     return jsonify({'message': 'Product created successfully'})

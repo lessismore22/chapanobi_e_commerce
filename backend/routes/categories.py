@@ -8,7 +8,7 @@ category_bp = Blueprint('categories', __name__)
 @login_required
 def create_Categories():
     data = request.get_json()
-    new_category = Categories(name=data['name'], description=data['description'])
+    new_category = Categories(name=data['name'], description=data['description'], user_id=current_user.id)
     db.session.add(new_category)
     db.session.commit()
     return jsonify({'message': 'Categories created successfully'})
