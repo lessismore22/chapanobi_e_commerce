@@ -1,0 +1,45 @@
+{
+"products": [
+	{
+	  "id": 1,
+	  "name": "Roco Wireless Headphone",
+	  "description": "High-quality wireless headphones with noise cancellation and long battery life.",
+	  "price": 99.99,
+	  "image_url": "../Assets/Iphone.png",
+	  
+	  "rating": 4.5
+	},
+	{
+	  "id": 2,
+	  "name": "Smart Watch Pro",
+	  "description": "Advanced smartwatch with fitness tracking, heart rate monitor, and GPS.",
+	  "price": 199.99,
+	  "image_url": "/Assets/camera.png",
+	  "rating": 4.7
+	},
+	{
+	  "id": 3,
+	  "name": "Bluetooth Speaker",
+	  "description": "Portable Bluetooth speaker with powerful sound and deep bass.",
+	  "price": 49.99,
+	  "image_url": "../Assets/gamepad.png",
+	  "rating": 4.3
+	},
+	{
+	  "id": 4,
+	  "name": "Wireless Earbuds",
+	  "description": "Compact wireless earbuds with high-quality sound and touch controls.",
+	  "price": 79.99,
+	  "image_url": "../Assets/gamepad3.png",
+	  "rating": 4.6
+	},
+	{
+	  "id": 5,
+	  "name": "Gaming Headset",
+	  "description": "Gaming headset with surround sound, noise-canceling microphone, and RGB lighting.",
+	  "price": 59.99,
+	  "image_url": "../Assets/sony_watch.png",
+	  "rating": 4.8
+	}
+      ]
+}

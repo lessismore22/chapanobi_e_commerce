@@ -1,0 +1,89 @@
+.hero{
+	height: 79vh;
+	background-image: url('../Assets/background.jpg');
+	display: flex;
+	background-size: cover;
+	background-position: center;
+	align-items: center;
+}
+
+.hero-left{
+	flex: 1;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	
+	padding-left: 130px;
+	line-height: 1.1px;
+}
+
+.hero-left h3{
+	font-weight: 600px;
+	line-height: 70px;
+	font-size: 60px;
+	color: white;
+}
+
+.hero-left .hero-button{
+	background-color: whitesmoke;
+	border: none;
+	color: #203562;
+	padding: 15px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 8px;
+	width: 200px;
+}
+
+.hero-left .hero-button:hover{
+	background-color: #45a049;
+	transform: scale(1.05);
+}
+
+.hero-right{
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.hero-image{
+	position: relative;
+	margin-right: 250px;
+}
+
+.hero-image .big-image{
+	width: 380px;
+}
+
+.hero-right .hero-image .small-image{
+	width: 150px;
+	height: auto;
+	position: absolute;
+	bottom: 40px;
+	right: -150px;
+}
+
+.hero-right .hero-image .fast-sale{
+	width: 70px;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -170px;
+	margin-left: 6px;
+	border-radius: 50%;
+	font-size: 14px;
+	background-color: white;
+	position: absolute;
+	font-size: 15px;
+	font-weight: 1000px;
+}
+
+
+

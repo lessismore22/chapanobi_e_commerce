@@ -1,0 +1,41 @@
+.newcollection{
+	margin-left: 98px;
+		
+}
+
+.collections{
+	display: grid;
+	grid-template-columns: 0.5fr 0.5fr 0.5fr 1fr;
+	margin-top: 30px;
+	gap: 15px;
+	width: 70%;
+}
+
+
+
+.collections .collectionscontent{
+	width: 280px;
+	height: 250px;
+	background-color: whitesmoke;
+	border-radius: 2px;
+	box-shadow: px 2px 8px rgba(0, 0, 0, 0.1);
+	position: relative;
+	
+	
+}
+.collections .collectionscontent img{
+	width: 190px;
+	height: 180px;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	top: 38%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  	
+  	
+}
+.collectionscontent p{
+	margin-bottom: -20px;
+	margin-left: 30px;
+}
