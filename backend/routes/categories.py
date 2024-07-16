@@ -8,7 +8,7 @@ category_bp = Blueprint('categories', __name__)
 @login_required
 def create_Categories():
     data = request.get_json()
-    new_category = Categories(name=data['name'])
+    new_category = Categories(name=data['name'], description=data['description'])
     db.session.add(new_category)
     db.session.commit()
     return jsonify({'message': 'Categories created successfully'})
@@ -16,28 +16,31 @@ def create_Categories():
 @category_bp.route('/', methods=['GET'])
 def get_categories():
     categories = Categories.query.all()
-    return jsonify([{'id': Categories.id, 'name': Categories.name} for Categories in categories])
+    return jsonify([{
+        'id': Categories.id,
+        'name': Categories.name,
+        "description": Categories.description
+        } for Categories in categories])
 
-@category_bp.route('/<int:Categories_id>', methods=['PUT'])
-def update_categories():
+@category_bp.route('/<int:category_id>', methods=['PUT'])
+def update_categories(category_id):
     data = request.get_json()
-    Categories = Categories.query.filter_by(id=Categories.id, user_id=current_user.id).first()
-    if not Categories:
+    categories = Categories.query.filter_by(id=category_id, user_id=current_user.id).first()
+    if not categories:
         return jsonify({'message': 'Categories not found'}), 404
     if 'name' in data:
-        Categories.name = data['name']
+        categories.name = data['name']
     if 'description' in data:
-        Categories.description = data['description']
+        categories.description = data['description']
     db.session.commit
     return jsonify({'message': 'Categories updated successfully'})
 
-@category_bp.route('/<int:Categories_id>', methods=['DELETE'])
-def delete_Categories():
-    Categories = Categories.query.filter_by(id=Categories.id, user_id=current_user.id).first()
-    if not Categories:
+@category_bp.route('/<int:category_id>', methods=['DELETE'])
+def delete_Categories(category_id):
+    category = Categories.query.filter_by(id=category_id, user_id=current_user.id).first()
+    if not category:
         return jsonify({'message': 'Categories not found'}), 404
-    Categories.query.filter_by(id=Categories.id).delete()
-    db.session.delete(Categories)
+    db.session.delete(category)
     db.session.commit()
     return jsonify({'message': 'Order deleted successfully'})
     

@@ -32,7 +32,7 @@ class User(UserMixin, db.Model):
     phone = db.Column(db.String(50))
     address = db.Column(db.String(250))
     email = db.Column(db.String(150), unique=True)
-    password = db.Column(db.String(150))
+    password = db.Column(db.String(255))
     role = db.Column(db.String(50), default='User')
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     updated_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc), onupdate = lambda: datetime.now(timezone.utc))
@@ -65,6 +65,7 @@ class Categories(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150), nullable=False)
     description = db.Column(db.String(50), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     updated_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
 
@@ -74,7 +75,7 @@ class Product(db.Model):
     description = db.Column(db.String(150), nullable=True)
     price = db.Column(db.Float, nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey('categories.id'), nullable=False)
-    image_url = db.Column(db.String)
+    image_url = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     updated_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
 

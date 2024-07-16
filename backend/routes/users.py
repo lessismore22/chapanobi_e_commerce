@@ -36,3 +36,9 @@ def profile():
         'username': current_user.username,
         'email': current_user.email
     })
+    
+
+@user_bp.route('/protected', methods=['GET'])
+@login_required
+def protected():
+    return jsonify({'message': f'Hello, {current_user.name}!'}), 200
