@@ -6,9 +6,22 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import LoginSignup from './Pages/LoginSignup';
 import Footer from './Components/Footer/Footer';
+// import React, { useState, useEffect } from React
 
 
-function App() {
+ function App() {
+
+//     Const [data, setData] = useState([{}])
+
+//     useEffect(() => {
+//       fetch('/api/users/register')
+//         .then(response => response.json())
+//         .then(data => setUsers(data))
+//         .catch(error => console.error('Error fetching data:', error));
+//     }, []);
+
+
+
   return (
     <div>
 
