@@ -6,38 +6,33 @@ const LoginSignup = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const toggleMode = () => {
     setIsLogin(!isLogin);
     setUsername('');
     setEmail('');
     setPassword('');
-  };
+    setConfirmPassword('');
+	};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isLogin) {
-      console.log('Logging in:', {username, password});
-    } else {
-      console.log('Signup:', { username, email, password });
-    }
-  };
 
   return (
     <div className='login-signup-container'>
       <h1>{isLogin ? 'Login' : 'Sign up'}</h1>
-      <form onSubmit={handleSubmit}>
-        <div className='form-group'>
-        <label htmlFor="username">Username:</label>
-        <input
-         type="text"
-         id='username'
-         value={username}
-         onChange={(e) => setUsername(e.target.value)}
-         required 
-         />
-        </div>
-        {!isLogin &&(
+		  <form onSubmit={handleSubmit}>
+		{!isLogin &&(
+			<div className='form-group'>
+			<label htmlFor="username">Username:</label>
+			<input
+			type="text"
+			id='username'
+			value={username}
+			onChange={(e) => setUsername(e.target.value)}
+			required 
+			/>
+			</div>
+        )}
           <div className='form-group'>
             <label htmlFor="email">Email:</label>
             <input
@@ -47,9 +42,8 @@ const LoginSignup = () => {
              onChange={(e) => setEmail(e.target.value)}
              required
              />
-
           </div>
-        )}
+        
         <div className='form-group'>
           <label htmlFor="password">Password:</label>
           <input 
