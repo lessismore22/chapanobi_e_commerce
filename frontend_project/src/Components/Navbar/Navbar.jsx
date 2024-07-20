@@ -23,6 +23,7 @@ const [menu,setMenu] = useState("home");
 
     <div className='nav-login-cart'>
       <div className='btn'><Link to='/login'><button>Login </button></Link></div>
+      <div className='btn'><Link to='/register'><button>Register </button></Link></div>
       <div><Link to='/cart'><img src={cart} alt="" /></Link></div>
       <div className='nav-cart-count'>0</div>
 

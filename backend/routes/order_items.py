@@ -19,5 +19,5 @@ def get_order_items():
         'order_id': order_item.order_id,
         'product_id': order_item.product_id,
         'quantity': order_item.quantity,
-        'price' : order_item.price
+        'price' : order_item.price 
     } for order_item in order_items])
