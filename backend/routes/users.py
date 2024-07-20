@@ -33,7 +33,7 @@ def logout():
 @login_required
 def profile():
     return jsonify({
-        'username': current_user.username,
+        'name': current_user.name,
         'email': current_user.email
     })
     
